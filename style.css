@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 * {
-    color: #333;
     font-family: 'roboto', sans-serif;
     padding: 0;
     margin: 0;
@@ -11,11 +10,6 @@ body{
     background: #edf0f2;
 }
 
-h1, 
-h2{
-    text-transform: uppercase;
-}
-
 #app{
     padding: 25px;
     text-align: center;
@@ -23,14 +17,24 @@ h2{
 }
 
 input{
-    padding: 8px;
+    width: 80%;
+    max-width: 276px;
+    padding: 8px 30px;
     font-size: 16px;
-    border: 1px solid #ccc;
+    border: 1px solid #43bc70;
     border-radius: 3px;
-    width: 250px;
 }
 
-form button{
+.form h1{
+    font-size: 50px;
+    margin-bottom: 40px;
+}
+
+.form h1 span{
+    color: #43bc70;
+}
+
+.form .btnAdd{
     background: #43bc70;
     padding: 8px 12px;
     font-size: 16px;
@@ -41,23 +45,23 @@ form button{
     outline: none;
 }
 
-.form h1{
-    line-height: 70px;
+.btnAdd:hover{
+    opacity: 0.8;
 }
 
-section#tarefas{
+#tarefas{
     width: 80%;
     max-width: 380px;
-    margin: 0 auto
+    margin: 0 auto;
 }
 
-section#tarefas h1{
+#tarefas h1{
+    font-size: 40px;
     margin-top: 50px;
     line-height: 70px;
-    text-align: center;
 }
 
-section#tarefas li{
+#tarefas li{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -67,7 +71,7 @@ section#tarefas li{
     list-style: none;
 }
 
-section#tarefas button{
+#tarefas .btnRemove{
     padding: 5px;
     background: rgb(255, 0, 0);
     border: none;
@@ -76,4 +80,8 @@ section#tarefas button{
     color: #fff;
     cursor: pointer;
     outline: none;
+}
+
+.btnRemove:hover{
+    opacity: 80%;
 }
