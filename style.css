@@ -1,19 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 * {
-    color: #333;
-    font-family: 'roboto', sans-serif;
-    padding: 0;
     margin: 0;
+    padding: 0;
+    font-family: 'roboto', sans-serif;
+    box-sizing: border-box;
 }
 
 body{
     background: #edf0f2;
-}
-
-h1, 
-h2{
-    text-transform: uppercase;
 }
 
 #app{
@@ -22,42 +17,52 @@ h2{
     margin-top: 50px;
 }
 
-input{
-    padding: 8px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    width: 250px;
-}
-
-form button{
-    background: #43bc70;
-    padding: 8px 12px;
-    font-size: 16px;
-    cursor: pointer;
-    color: #fff;
-    border: 0;
-    border-radius: 3px;
-    outline: none;
-}
-
 .form h1{
-    line-height: 70px;
+    font-size: 50px;
+    margin-bottom: 40px;
 }
 
-section#tarefas{
+.form h1 span{
+    color: #43bc70;
+}
+
+ .form .tarefa{
+     width: 100%;
+     max-width: 270px;
+     padding: 8px 30px;
+     font-size: 16px;
+     border: 1px solid #43bc70;
+     border-radius: 3px;
+ }
+
+ .form .btnAdd{
+     background: #43bc70;
+     padding: 8px 12px;
+     font-size: 16px;
+     cursor: pointer;
+     color: #fff;
+     border: 0;
+     border-radius: 3px;
+     outline: none;
+ }
+
+.form .btnAdd:hover{
+    opacity: 0.8;
+}
+
+#tarefas{
     width: 80%;
     max-width: 380px;
-    margin: 0 auto
+    margin: 0 auto;
 }
 
-section#tarefas h1{
+#tarefas h1{
+    font-size: 40px;
     margin-top: 50px;
     line-height: 70px;
-    text-align: center;
 }
 
-section#tarefas li{
+#tarefas li{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -67,7 +72,7 @@ section#tarefas li{
     list-style: none;
 }
 
-section#tarefas button{
+#tarefas .btnRemove{
     padding: 5px;
     background: rgb(255, 0, 0);
     border: none;
@@ -76,4 +81,15 @@ section#tarefas button{
     color: #fff;
     cursor: pointer;
     outline: none;
+}
+
+.btnRemove:hover{
+    opacity: 80%;
+}
+
+@media(max-width: 362px){
+    .form .btnAdd{
+        width: 80%;
+        margin-top: 3px;
+    }
 }

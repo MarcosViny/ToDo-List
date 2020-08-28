@@ -1,22 +1,23 @@
 const inputElement = document.querySelector('input')
-const buttonElement = document.querySelector('form button')
+const btnAdd = document.querySelector('.btnAdd')
 const ulElement = document.querySelector('ul')
 
-buttonElement.onclick = ev => {
+btnAdd.onclick = ev => {
     ev.preventDefault()
 
     if(inputElement.value){
         const textElement = document.createElement('span')
         textElement.innerHTML = inputElement.value
 
-        const btnElement = document.createElement('button')
-        btnElement.innerHTML = 'Remover'
+        const btnRemove = document.createElement('button')
+        btnRemove.setAttribute('class', 'btnRemove')
+        btnRemove.innerHTML = 'Remover'
 
         const liElement = document.createElement('li')
         liElement.appendChild(textElement)
-        liElement.appendChild(btnElement)
+        liElement.appendChild(btnRemove)
 
-        btnElement.onclick = () => {
+        btnRemove.onclick = () => {
             ulElement.removeChild(liElement)
         }
 
