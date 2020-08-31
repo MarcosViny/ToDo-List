@@ -1,6 +1,6 @@
 # To Do-List
 
-Lista de tarefas desenvolvidas para ajudar a organizar melhor seus afazeres e tornar seu dia mais produtivo, evitando que você tenha que ficar lembrando tudo o que tem que ser feito.
+Lista de tarefas desenvolvida para ajudar a organizar melhor seus afazeres e tornar seu dia mais produtivo, evitando que você tenha que ficar lembrando tudo o que tem que ser feito.
 
 ## Technologies 🚀
 - HTML
