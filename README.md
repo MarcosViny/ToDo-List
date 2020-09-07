@@ -1,10 +1,11 @@
 # To Do-List
 
-Lista de tarefas desenvolvida para ajudar a organizar melhor seus afazeres e tornar seu dia mais produtivo, evitando que você tenha que ficar lembrando tudo o que tem que ser feito.
+Site desenvolvido com o objetivo de organizar as tarefas no dia a dia, consequentemente melhorar a produtividade dos usuários. 
 
 ## Technologies 🚀
 - HTML
 - CSS
 - Javascript
 
-![print](https://user-images.githubusercontent.com/58784661/88466367-ff823000-cea1-11ea-9a7a-782bb0cb1ac9.JPG)
+![desktop-home](https://user-images.githubusercontent.com/58784661/92420756-871eb800-f14b-11ea-8c8b-331dd92c23f9.png)
+![desktop-1](https://user-images.githubusercontent.com/58784661/92420839-eed50300-f14b-11ea-824c-fbfbb6dc2595.png)
