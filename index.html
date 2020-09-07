@@ -10,24 +10,29 @@
 </head>
 
 <body>
-   <div id="app">
-       <div class="form">
-           <h1><span>ToDo </span>List</h1>
-           <form>
-               <input class="tarefa" name="tarefa" id="tarefa" placeholder="Adicione aqui suas tarefas">
-               <button class="btnAdd">
-                   <i class="fas fa-plus"></i>
-                </button>           
+    <div id="app">
+        <div class="form">
+            <h1><span>ToDo </span>List</h1>
+            <form>
+                <div id="create-list-box">
+                    <input class="inputAdd" name="inputAdd" id="inputAdd" placeholder="O que deseja fazer?">
+                    <button class="btnAdd">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
             </form>
-       </div>
+        </div>
 
-   <section id="tarefas">
-       <h1>Tarefas</h1>
-       <ul>
-           <!--Adicionado Dinamicamente-->
-       </ul>
-   </section>
-   </div>
+        <section id="tarefas">
+            <div class="no-tasks">
+                <img class="no-tasks-icon" src="/images/no-tasks.svg" alt="icone">
+                <h2>Adicione itens a sua lista!</h2>
+            </div>
+            <ul>
+                <!--Adicionado Dinamicamente-->
+            </ul>
+        </section>
+    </div>
 
     <script src="script.js"></script>
 </body>

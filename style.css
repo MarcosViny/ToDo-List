@@ -12,7 +12,6 @@ body{
 }
 
 #app{
-    padding: 25px;
     text-align: center;
     margin-top: 50px;
 }
@@ -26,16 +25,16 @@ body{
     color: #43bc70;
 }
 
- .form .tarefa{
-     width: 100%;
-     max-width: 270px;
-     padding: 8px 30px;
+.form .inputAdd{
+     max-width: 350px;
+     padding: 8px 16px;
      font-size: 16px;
      border: 1px solid #43bc70;
      border-radius: 3px;
+     outline: none;
  }
 
- .form .btnAdd{
+.form .btnAdd{
      background: #43bc70;
      padding: 8px 12px;
      font-size: 16px;
@@ -56,40 +55,47 @@ body{
     margin: 0 auto;
 }
 
-#tarefas h1{
-    font-size: 40px;
+.no-tasks-icon{
     margin-top: 50px;
-    line-height: 70px;
+}
+
+.no-tasks h2 {
+    margin-bottom: 15px;
+}
+
+.no-tasks.hidden {
+    visibility: hidden;
+    margin-top: -210px;
 }
 
 #tarefas li{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 8px 30px;
+    margin-bottom: 12px;
+    padding: 8px 20px;
     background: #fff;
-    border: 1px solid rgb(153, 154, 156);
+    border-radius: 14px;
+    box-shadow: 2px 2px 2px 1px #43bc70;
     list-style: none;
 }
 
-#tarefas .btnRemove{
-    padding: 5px;
-    background: rgb(255, 0, 0);
+.btnRemove{
+    background: #fff;
+    color: #ff0000;
     border: none;
-    border-radius: 5px;
-    font-size: 14px;
-    color: #fff;
     cursor: pointer;
     outline: none;
 }
 
-.btnRemove:hover{
-    opacity: 80%;
+.btnRemove .fa-times-circle {
+    font-size: 25px;
+    border-radius: 50%;
+    transition: all ease .5s;
 }
 
-@media(max-width: 362px){
-    .form .btnAdd{
-        width: 80%;
-        margin-top: 3px;
-    }
+.btnRemove .fa-times-circle:hover {
+    background-color: #ff0000;
+    color: #fff;
+    border-radius: 50%;
 }
