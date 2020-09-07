@@ -12,8 +12,15 @@ body{
 }
 
 #app{
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-top: 50px;
+    text-align: center;
+}
+
+.form {
+    width: 100%;
 }
 
 .form h1{
@@ -49,23 +56,13 @@ body{
     opacity: 0.8;
 }
 
-#tarefas{
-    width: 80%;
-    max-width: 380px;
-    margin: 0 auto;
+#tarefas {
+    width: 100%;
 }
 
-.no-tasks-icon{
-    margin-top: 50px;
-}
-
-.no-tasks h2 {
-    margin-bottom: 15px;
-}
-
-.no-tasks.hidden {
-    visibility: hidden;
-    margin-top: -210px;
+#tarefas ul {
+    margin: 30px auto;
+    width: 335px;
 }
 
 #tarefas li{
@@ -78,6 +75,20 @@ body{
     border-radius: 14px;
     box-shadow: 2px 2px 2px 1px #43bc70;
     list-style: none;
+}
+
+.no-tasks-icon{
+    max-width: 335px;
+    margin-top: 50px;
+}
+
+.no-tasks h2 {
+    margin-bottom: 15px;
+}
+
+.no-tasks.hidden {
+    visibility: hidden;
+    height: 0;
 }
 
 .btnRemove{
@@ -98,4 +109,10 @@ body{
     background-color: #ff0000;
     color: #fff;
     border-radius: 50%;
+}
+
+@media(max-width: 375px) {
+    #tarefas ul {
+        width: 85%;
+    }
 }
