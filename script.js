@@ -1,30 +1,72 @@
 const noTasks = document.querySelector('.no-tasks')
-const inputElement = document.querySelector('.inputAdd')
-const btnAdd = document.querySelector('.btnAdd')
-const ulElement = document.querySelector('ul')
+const txtInputTask = document.querySelector('.txtInputTask')
+const btnAddTask = document.querySelector('.btnAddTask')
+const ulTasks = document.querySelector('#tasks ul')
 
-btnAdd.onclick = ev => {
-    ev.preventDefault()
+let list = JSON.parse(localStorage.getItem('pKey')) || []
 
-    if(inputElement.value){
-        noTasks.classList.add('hidden')
+function renderTasks() {
+    ulTasks.innerHTML = ''
 
-        const textElement = document.createElement('span')
-        textElement.innerHTML = inputElement.value
+    for(let item of list){
+        const liTask = document.createElement('li')
+        const textTask = document.createTextNode(item)
 
         const btnRemove = document.createElement('button')
-        btnRemove.setAttribute('class', 'btnRemove')
         btnRemove.innerHTML = `<i class="far fa-times-circle"></i>`
+        btnRemove.setAttribute('class', 'btnRemove')
 
-        const liElement = document.createElement('li')
-        liElement.appendChild(textElement)
-        liElement.appendChild(btnRemove)
+        let pos = list.indexOf(item)
+        liTask.setAttribute('onclick', 'removeTask(' + pos + ')')
+        
+        btnRemove.onclick = (() => {
+            ulTasks.removeChild(liTask)
+        })
+ 
+        liTask.appendChild(textTask)
+        liTask.appendChild(btnRemove)
+        ulTasks.appendChild(liTask)
 
-        btnRemove.onclick = () => {
-            ulElement.removeChild(liElement)
-        }
-
-        ulElement.appendChild(liElement) 
-        inputElement.value = ""
+        noTasks.classList.add('hidden')
     }
+
+    if(!list.length) {
+        noTasks.classList.remove('hidden')
+    }
+
+}
+
+renderTasks()
+
+
+function addTask() {
+    const textTask = txtInputTask.value
+
+    list.push(textTask)
+
+    renderTasks()
+
+    txtInputTask.value = ''
+
+    saveToStorage()
+}
+
+function removeTask(pos) {
+    list.splice(pos, 1)
+
+    saveToStorage()
+
+    renderTasks()
+}
+
+btnAddTask.onclick = ev => {
+    ev.preventDefault()
+
+    if(txtInputTask.value) {
+        addTask()
+    }
+}
+
+function saveToStorage() {
+    localStorage.setItem('pKey', JSON.stringify(list))
 }
