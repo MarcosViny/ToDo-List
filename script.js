@@ -3,7 +3,7 @@ const txtInputTask = document.querySelector('.txtInputTask')
 const btnAddTask = document.querySelector('.btnAddTask')
 const ulTasks = document.querySelector('#tasks ul')
 
-let list = JSON.parse(localStorage.getItem('pKey')) || []
+let list = JSON.parse(localStorage.getItem('todo')) || []
 
 function renderTasks() {
     ulTasks.innerHTML = ''
@@ -17,11 +17,7 @@ function renderTasks() {
         btnRemove.setAttribute('class', 'btnRemove')
 
         let pos = list.indexOf(item)
-        liTask.setAttribute('onclick', 'removeTask(' + pos + ')')
-        
-        btnRemove.onclick = (() => {
-            ulTasks.removeChild(liTask)
-        })
+        btnRemove.setAttribute('onclick', 'removeTask(' + pos + ')')
  
         liTask.appendChild(textTask)
         liTask.appendChild(btnRemove)
@@ -33,30 +29,22 @@ function renderTasks() {
     if(!list.length) {
         noTasks.classList.remove('hidden')
     }
-
 }
 
 renderTasks()
 
-
 function addTask() {
     const textTask = txtInputTask.value
-
     list.push(textTask)
-
-    renderTasks()
-
     txtInputTask.value = ''
-
+    renderTasks()
     saveToStorage()
 }
 
 function removeTask(pos) {
     list.splice(pos, 1)
-
-    saveToStorage()
-
     renderTasks()
+    saveToStorage()
 }
 
 btnAddTask.onclick = ev => {
@@ -68,5 +56,5 @@ btnAddTask.onclick = ev => {
 }
 
 function saveToStorage() {
-    localStorage.setItem('pKey', JSON.stringify(list))
+    localStorage.setItem('todo', JSON.stringify(list))
 }

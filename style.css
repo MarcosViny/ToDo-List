@@ -57,16 +57,16 @@ body{
     opacity: 0.8;
 }
 
-#tarefas {
+#tasks {
     width: 100%;
 }
 
-#tarefas ul {
+#tasks ul {
     margin: 30px auto;
     width: 335px;
 }
 
-#tarefas li{
+#tasks li{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -115,7 +115,7 @@ body{
 }
 
 @media(max-width: 375px) {
-    #tarefas ul {
+    #tasks ul {
         width: 85%;
     }
 }
